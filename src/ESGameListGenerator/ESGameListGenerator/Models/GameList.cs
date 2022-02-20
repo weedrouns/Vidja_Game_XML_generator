@@ -17,6 +17,10 @@ namespace ESGameListGenerator.Models
         [XmlElement( ElementName = "image" )]
         public string Image { get; set; }
         [XmlElement( ElementName = "rating" )]
+        public string Video { get; set; }  
+        [XmlElement( ElementName = "video")]
+        public string Marquee { get; set; }
+        [XmlElement(ElementName = "marquee")]
         public string Rating { get; set; }
         [XmlElement( ElementName = "releasedate" )]
         public string Releasedate { get; set; }
@@ -37,7 +41,24 @@ namespace ESGameListGenerator.Models
     [XmlRoot( ElementName = "gameList" )]
     public class GameList
     {
-        [XmlElement( ElementName = "game" )]
+        [XmlElement(ElementName = "game")]
         public List<Game> Game { get; set; }
+        
     }
+    [XmlRoot ( ElementName = "videoList")]
+    public class VideoList
+    {
+        [XmlElement(ElementName = "video")]
+        public List<VideoList> video { get; set; }
+    }
+
+    [XmlRoot (ElementName = "marqueeList")]
+    public class marqueeList
+    {
+        [XmlElement (ElementName = "marquee")]
+        public List<marqueeList> marquee { get; set; }
+
+       
+    }
+    //Add new elements here
 }

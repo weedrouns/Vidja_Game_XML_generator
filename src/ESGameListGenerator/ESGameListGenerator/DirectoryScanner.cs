@@ -46,5 +46,23 @@ namespace ESGameListGenerator
 
             return imgFiles;
         }
+        public static List<FileInfo> FindVideoFiles(string dirPath)
+        {
+            var vidFiles = new List<FileInfo>();
+
+            var dirInfo = new DirectoryInfo(dirPath);
+            vidFiles = dirInfo.GetFilesByExtensions(".mp4", ".mkv", ".mpeg").ToList();
+
+            return vidFiles;
+        }
+        public static List<FileInfo> FindMarqueeFiles(string dirPath)
+        {
+            var mqeFiles = new List<FileInfo>();
+
+            var dirInfo = new DirectoryInfo(dirPath);
+            mqeFiles = dirInfo.GetFilesByExtensions(".bmp", ".jpg", ".png").ToList();
+
+            return mqeFiles;
+        }
     }
 }

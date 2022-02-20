@@ -84,7 +84,13 @@ namespace ESGameListGenerator.Models.GameDBAPI
         public string Developer { get; set; }
         [XmlElement( ElementName = "Images" )]
         public Images Images { get; set; }
+        
     }
+    [XmlRoot(ElementName = "Video")]
+    public class Video { }
+
+    [XmlRoot(ElementName = "Marquee")]
+    public class Marquee { }
 
     [XmlRoot( ElementName = "Data" )]
     public class GameData
